@@ -21,8 +21,6 @@ public class App extends Application
     private static final int NUM_COLS = 5;
     private VBox root;
     private TextField[][] textFields = new TextField[NUM_ROWS][NUM_COLS];
-    private int width = 800;
-    private int height = 800;
 
     @Override
     public void start(Stage primaryStage) throws Exception
