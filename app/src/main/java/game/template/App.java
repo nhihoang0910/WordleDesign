@@ -66,7 +66,8 @@ public class App extends Application
             }
         });
 
-        Scene scene = new Scene(root, width, height);
+        // don't give a width or height to the scene
+        Scene scene = new Scene(root);
 
         URL styleURL = getClass().getResource("/style.css");
         String stylesheet = styleURL.toExternalForm();
@@ -94,6 +95,8 @@ public class App extends Application
         addMenuItem(fileMenu, "Load from file", () -> {
             System.out.println("Load from file");
         });
+
+        menuBar.getMenus().add(fileMenu);
 
         return menuBar;
     }
