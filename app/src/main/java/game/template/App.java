@@ -27,7 +27,7 @@ public class App extends Application
     {
         root = new VBox();
 
-        root.getChildren().add(createMenuBar(primaryStage));
+        root.getChildren().add(createMenuBar());
 
         GridPane gridPane = new GridPane();
         root.getChildren().add(gridPane);
@@ -52,12 +52,14 @@ public class App extends Application
             {
                 // check for the key input
                 case ESCAPE:
+                    // remove focus from the textfields by giving it to the root VBox
+                    root.requestFocus();
                     System.out.println("You pressed ESC key");
                     break;
                 case ENTER:
                     System.out.println("You pressed ENTER key");
                     break;
-                    default:
+                default:
                     System.out.println("you typed key: " + event.getCode());
                     break;
                 
@@ -80,7 +82,7 @@ public class App extends Application
 
     }
 
-    private MenuBar createMenuBar(Stage primaryStage)
+    private MenuBar createMenuBar()
     {
         MenuBar menuBar = new MenuBar();
     	menuBar.getStyleClass().add("menubar");
